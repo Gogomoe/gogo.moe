@@ -1,0 +1,157 @@
+body {
+    margin: 0;
+    font-family: "Roboto", "Arial", Sans-serif, serif;
+    font-size: 20px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 300;
+}
+
+.section {
+    position: relative;
+}
+
+.section .text {
+    position: absolute;
+    margin: 0;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.4);
+    animation: font-flicker ease-in-out 3s infinite alternate;
+}
+
+.section .text p {
+    margin: inherit;
+}
+
+.section .text h1 {
+    font-size: 4em;
+    margin: inherit;
+    text-shadow: 3px 3px 10px rgba(255, 255, 255, 0.3);
+    animation: inherit;
+}
+
+.section .pid {
+    font-size: .8em;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, .6);
+    color: rgba(255, 255, 255, .6);
+    padding: .5em 1em;
+}
+
+.pid a {
+    color: rgba(255, 255, 255, .6);
+    text-decoration: none;
+}
+
+#section1 {
+    background: url("/imgs/index-1.jpg") no-repeat;
+    background-size: cover;
+}
+
+@keyframes font-flicker {
+    to {
+        color: rgba(255, 255, 255, 0.9);
+    }
+}
+
+#section2 {
+    background: url("/imgs/index-2.jpg");
+    background-size: cover;
+}
+
+#section2 .text p {
+    letter-spacing: 1.1em;
+}
+
+#section2 .content {
+    position: absolute;
+    color: rgba(255, 255, 255, 0.3);
+    text-shadow: 2px 2px 6px rgba(255, 255, 255, 0.3);
+    text-align: center;
+    animation: font-flicker ease-in-out 3s infinite alternate;
+}
+
+@keyframes opacity-flicker {
+    to {
+        opacity: 1;
+    }
+}
+
+#section2 .content .avatar {
+    width: 6em;
+    height: 6em;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: .6;
+    border-radius: 3em;
+    background: url("//static.gogo.moe/avatar.jpg");
+    background-size: 6em 6em;
+    animation: opacity-flicker ease-in-out 3s infinite alternate;
+}
+
+#section2 .content p {
+    font-size: 2em;
+    font-weight: 300;
+    margin: 0.5em;
+}
+
+#section3 {
+    background: url("/imgs/index-3.jpg");
+    background-size: cover;
+}
+
+#section3 .text p {
+    letter-spacing: 0.15em;
+}
+
+#section3 .links {
+    list-style: none;
+    padding: 0;
+}
+
+@keyframes link-flicker {
+    to {
+        opacity: .8;
+    }
+}
+
+#section3 .links li a {
+    display: inline-block;
+    padding: 0.3em;
+    border-radius: 0.8em;
+    background: white;
+    opacity: .4;
+    text-decoration: none;
+    color: black;
+    animation: link-flicker ease-in-out 3s infinite alternate;
+    transition: background 1s;
+}
+
+#section3 .links li a:hover {
+    background: #00e676;
+}
+
+@media (min-width: 550px) {
+    #section1 .text, #section2 .text, #section3 .text {
+        left: 10%;
+        top: 30%;
+    }
+
+    #section2 .content {
+        top: 15%;
+        right: 20%;
+    }
+}
+
+@media (max-width: 550px) {
+    .section .text, #section2 .content {
+        position: static;
+    }
+
+    #section2 .content {
+        font-size: 16px;
+    }
+}
